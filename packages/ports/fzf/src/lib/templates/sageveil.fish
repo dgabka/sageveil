@@ -1,6 +1,6 @@
 set -Ux FZF_DEFAULT_OPTS "
-	--color=fg:<%= it.ansi.base.white %>,bg:<%= it.ansi.base.white %>,hl:<%= it.ansi.base.cyan %>
-	--color=fg+:<%= it.ansi.base.white %>,bg+:<%= it.extras.surface %>,hl+:<%= it.ansi.base.cyan %>
-	--color=border:<%= it.ansi.dim.blue %>,header:<%= it.ansi.base.green %>,gutter:<%= it.ansi.dim.black %>
-	--color=spinner:<%= it.ansi.base.yellow %>,info:<%= it.ansi.dim.blue %>,separator:<%= it.ansi.dim.blue %>
-	--color=pointer:<%= it.ansi.base.cyan %>,marker:<%= it.ansi.base.green %>,prompt:<%= it.ansi.dim.white %>"
+	--color=fg:<%= it.extras.muted %>,bg:<%= it.extras.overlay %>,hl:<%= it.ansi.bright.white %>
+	--color=fg+:<%= it.extras.muted %>,bg+:<%= it.extras.highlight %>,hl+:<%= it.ansi.bright.white %>
+	--color=border:<%= it.extras.border %>,header:<%= it.ansi.base.green %>,gutter:<%= it.extras.surface %>
+	--color=spinner:<%= it.ansi.base.yellow %>,info:<%= it.ansi.base.blue %>,separator:<%= it.extras.border %>
+	--color=pointer:<%= it.ansi.base.magenta %>,marker:<%= it.extras.highlight %>,prompt:<%= it.extras.muted %>"

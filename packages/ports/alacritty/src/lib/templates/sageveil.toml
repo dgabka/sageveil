@@ -4,35 +4,35 @@
 [colors.primary]
 foreground = "<%= it.ansi.base.white %>"
 background = "<%= it.ansi.base.black %>"
-dim_foreground = "<%= it.ansi.dim.white %>"
+dim_foreground = "<%= it.extras.muted %>"
 bright_foreground = "<%= it.ansi.bright.white %>"
 
 [colors.cursor]
-text = "<%= it.ansi.base.black %>"
+text = "<%= it.extras.cursor_text %>"
 cursor = "<%= it.extras.cursor %>"
 
 [colors.vi_mode_cursor]
-text = "<%= it.ansi.base.black %>"
+text = "<%= it.extras.cursor_text %>"
 cursor = "<%= it.extras.cursor %>"
 
 [colors.search.matches]
-foreground = "<%= it.ansi.dim.white %>"
-background = "<%= it.extras.surface %>"
+foreground = "<%= it.ansi.base.white %>"
+background = "<%= it.extras.overlay %>"
 
 [colors.search.focused_match]
 foreground = "<%= it.ansi.base.magenta %>"
-background = "<%= it.extras.surface %>"
+background = "<%= it.extras.highlight %>"
 
 [colors.selection]
 text = "<%= it.ansi.base.white %>"
-background = "<%= it.extras.surface %>"
+background = "<%= it.extras.highlight %>"
 
 [colors.hints.start]
-foreground = "<%= it.ansi.dim.white %>"
+foreground = "<%= it.extras.muted %>"
 background = "<%= it.extras.surface %>"
 
 [colors.hints.end]
-foreground = "<%= it.ansi.dim.white %>"
+foreground = "<%= it.extras.muted %>"
 background = "<%= it.extras.surface %>"
 
 [colors.line_indicator]
@@ -54,7 +54,7 @@ cyan = "<%= it.ansi.base.cyan %>"
 white = "<%= it.ansi.base.white %>"
 
 [colors.bright]
-black = "<%= it.ansi.bright.black %>"
+black = "<%= it.extras.dim %>"
 red = "<%= it.ansi.bright.red %>"
 green = "<%= it.ansi.bright.green %>"
 yellow = "<%= it.ansi.bright.yellow %>"
@@ -64,11 +64,11 @@ cyan = "<%= it.ansi.bright.cyan %>"
 white = "<%= it.ansi.bright.white %>"
 
 [colors.dim]
-black = "<%= it.ansi.dim.black %>"
-red = "<%= it.ansi.dim.red %>"
-green = "<%= it.ansi.dim.green %>"
-yellow = "<%= it.ansi.dim.yellow %>"
-blue = "<%= it.ansi.dim.blue %>"
-magenta = "<%= it.ansi.dim.magenta %>"
-cyan = "<%= it.ansi.dim.cyan %>"
-white = "<%= it.ansi.dim.white %>"
+black = "<%= it.ansi.base.black %>"
+red = "<%= it.ansi.base.red %>"
+green = "<%= it.ansi.base.green %>"
+yellow = "<%= it.ansi.base.yellow %>"
+blue = "<%= it.ansi.base.blue %>"
+magenta = "<%= it.ansi.base.magenta %>"
+cyan = "<%= it.ansi.base.cyan %>"
+white = "<%= it.extras.muted %>"

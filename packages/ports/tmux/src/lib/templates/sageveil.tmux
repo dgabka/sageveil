@@ -36,15 +36,14 @@ unset_option() {
 main() {
     sageveil_bg="<%= it.ansi.base.black %>"
     sageveil_fg="<%= it.ansi.base.white %>"
-    sageveil_muted_fg="<%= it.ansi.dim.white %>"
-    sageveil_dgreen="<%= it.ansi.dim.green %>"
+    sageveil_muted_fg="<%= it.extras.muted %>"
     sageveil_red="<%= it.ansi.base.red %>"
-    sageveil_dyellow="<%= it.ansi.dim.yellow %>"
+    sageveil_dyellow="<%= it.ansi.base.yellow %>"
     sageveil_byellow="<%= it.ansi.bright.yellow %>"
     sageveil_green="<%= it.ansi.base.green %>"
     sageveil_cyan="<%= it.ansi.base.cyan %>"
     sageveil_magenta="<%= it.ansi.base.magenta %>"
-    sageveil_border="<%= it.ansi.dim.blue %>"
+    sageveil_border="<%= it.extras.border %>"
 
     # Aggregating all commands into a single array
     local tmux_commands=()
@@ -220,7 +219,7 @@ main() {
     # These variables are the defaults so that the setw and set calls are easier to parse
 
     local show_window
-    readonly show_window=" #[fg=$sageveil_dgreen]$current_window_icon #[fg=$sageveil_byellow]#W$spacer"
+    readonly show_window=" #[fg=$sageveil_green]$current_window_icon #[fg=$sageveil_byellow]#W$spacer"
 
     local show_window_in_window_status
     show_window_in_window_status="#[fg=$sageveil_magenta]#I#[fg=$sageveil_magenta,]$left_separator#[fg=$sageveil_magenta]#W"
@@ -232,16 +231,16 @@ main() {
     readonly show_session=" #[fg=$sageveil_fg]$current_session_icon #[fg=$sageveil_fg]#S "
 
     local show_user
-    readonly show_user="#[fg=$sageveil_magenta]#(whoami)#[fg=$sageveil_dgreen]$right_separator#[fg=$sageveil_dgreen]$username_icon"
+    readonly show_user="#[fg=$sageveil_magenta]#(whoami)#[fg=$sageveil_green]$right_separator#[fg=$sageveil_green]$username_icon"
 
     local show_host
-    readonly show_host="$spacer#[fg=$sageveil_fg]#H#[fg=$sageveil_dgreen]$right_separator#[fg=$sageveil_dgreen]$hostname_icon"
+    readonly show_host="$spacer#[fg=$sageveil_fg]#H#[fg=$sageveil_green]$right_separator#[fg=$sageveil_green]$hostname_icon"
 
     local show_date_time
-    readonly show_date_time=" #[fg=$sageveil_cyan]$date_time#[fg=$sageveil_dgreen]$right_separator#[fg=$sageveil_dgreen]$date_time_icon "
+    readonly show_date_time=" #[fg=$sageveil_cyan]$date_time#[fg=$sageveil_green]$right_separator#[fg=$sageveil_green]$date_time_icon "
 
     local show_directory
-    readonly show_directory="$spacer#[fg=$sageveil_dgreen]$current_folder_icon #[fg=$sageveil_byellow]#{b:pane_current_path} "
+    readonly show_directory="$spacer#[fg=$sageveil_green]$current_folder_icon #[fg=$sageveil_byellow]#{b:pane_current_path} "
 
     local show_directory_in_window_status
     # BUG: It doesn't let the user pass through a custom window name

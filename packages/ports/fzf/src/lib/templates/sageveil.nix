@@ -1,17 +1,17 @@
 {
-  "fg" = "<%= it.ansi.base.white %>";
-  "bg" = "<%= it.ansi.base.black %>";
-  "hl" = "<%= it.ansi.base.cyan %>";
-  "fg+" = "<%= it.ansi.base.white %>";
-  "bg+" = "<%= it.extras.surface %>";
-  "hl+" = "<%= it.ansi.base.cyan %>";
-  "border" = "<%= it.ansi.dim.blue %>";
+  "fg" = "<%= it.extras.muted %>";
+  "bg" = "<%= it.extras.overlay %>";
+  "hl" = "<%= it.ansi.bright.white %>";
+  "fg+" = "<%= it.extras.muted %>";
+  "bg+" = "<%= it.extras.highlight %>";
+  "hl+" = "<%= it.ansi.bright.white %>";
+  "border" = "<%= it.extras.border %>";
   "header" = "<%= it.ansi.base.green %>";
-  "gutter" = "<%= it.ansi.dim.black %>";
+  "gutter" = "<%= it.extras.surface %>";
   "spinner" = "<%= it.ansi.base.yellow %>";
-  "info" = "<%= it.ansi.dim.blue %>";
-  "separator" = "<%= it.ansi.dim.blue %>";
-  "pointer" = "<%= it.ansi.base.cyan %>";
-  "marker" = "<%= it.ansi.base.green %>";
-  "prompt" = "<%= it.ansi.dim.white %>";
+  "info" = "<%= it.ansi.base.blue %>";
+  "separator" = "<%= it.extras.border %>";
+  "pointer" = "<%= it.ansi.base.magenta %>";
+  "marker" = "<%= it.extras.highlight %>";
+  "prompt" = "<%= it.extras.muted %>";
 }

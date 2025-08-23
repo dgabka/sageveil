@@ -15,8 +15,17 @@ const expectedAnsiColors = [
   'cyan',
   'white',
 ];
-const expectedAnsiVariants = ['base', 'bright', 'dim'];
-const expectedExtrasKeys = ['surface', 'overlay', 'cursor'];
+const expectedAnsiVariants = ['base', 'bright'];
+const expectedExtrasKeys = [
+  'surface',
+  'overlay',
+  'highlight',
+  'border',
+  'muted',
+  'dim',
+  'cursor',
+  'cursor_text',
+];
 
 describe('sageveil palette', () => {
   it('should have the correct top-level structure', () => {
