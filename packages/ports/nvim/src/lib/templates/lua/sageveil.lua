@@ -1,6 +1,7 @@
 local M = {}
 local config = require("sageveil.config")
 local c = require("sageveil.palette")
+local utilities = require("sageveil.utilities")
 
 local function set_highlights()
 	local highlights = {
@@ -88,10 +89,13 @@ local function set_highlights()
 		WarningMsg = { fg = c.yellow_bright },
 
 		-- Git
-		DiffAdd = { fg = c.green, bg = c.black },
-		DiffChange = { fg = c.yellow, bg = c.black },
-		DiffDelete = { fg = c.red, bg = c.black },
-		DiffText = { fg = c.yellow, bg = c.black, bold = true },
+		DiffAdd = { bg = c.green, blend = 20 },
+		DiffChange = { bg = c.yellow, blend = 10 },
+		DiffDelete = { bg = c.red, blend = 20 },
+		DiffText = { bg = c.yellow, blend = 25 },
+		diffAdded = { link = "DiffAdd" },
+		diffChanged = { link = "DiffChange" },
+		diffRemoved = { link = "DiffDelete" },
 		GitSignsAdd = { fg = c.green },
 		GitSignsChange = { fg = c.yellow },
 		GitSignsDelete = { fg = c.red },
@@ -141,6 +145,26 @@ local function set_highlights()
 		-- Blink
 		BlinkCmpMenu = { link = "Pmenu" },
 		BlinkCmpMenuBorder = { fg = c.border, bg = c.overlay },
+
+		-- nvim-neotest/neotest
+		NeotestAdapterName = { fg = c.blue },
+		NeotestBorder = { fg = c.border },
+		NeotestDir = { fg = c.blue },
+		NeotestExpandMarker = { fg = c.highlight },
+		NeotestFailed = { fg = c.red },
+		NeotestFile = { fg = c.white },
+		NeotestFocused = { fg = c.yellow, bg = c.highlight },
+		NeotestIndent = { fg = c.highlight },
+		NeotestMarked = { fg = c.cyan, bold = 1 },
+		NeotestNamespace = { fg = c.yellow },
+		NeotestPassed = { fg = c.green },
+		NeotestRunning = { fg = c.yellow },
+		NeotestWinSelect = { fg = c.muted },
+		NeotestSkipped = { fg = c.muted },
+		NeotestTarget = { fg = c.magenta },
+		NeotestTest = { fg = c.yellow },
+		NeotestUnknown = { fg = c.muted },
+		NeotestWatching = { fg = c.cyan },
 	}
 
 	-- Terminal ANSI colors
@@ -168,8 +192,12 @@ local function set_highlights()
 	end
 
 	-- Apply highlights
-	for group, opts in pairs(highlights) do
-		vim.api.nvim_set_hl(0, group, opts)
+	for group, hl in pairs(highlights) do
+		if hl.blend ~= nil and (hl.blend >= 0 and hl.blend <= 100) and hl.bg ~= nil then
+			hl.bg = utilities.blend(hl.bg, hl.blend_on or c.black, hl.blend / 100)
+		end
+
+		vim.api.nvim_set_hl(0, group, hl)
 	end
 end
 
