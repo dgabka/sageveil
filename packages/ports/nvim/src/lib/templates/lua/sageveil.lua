@@ -62,6 +62,7 @@ local function set_highlights()
 		Label = { fg = c.yellow },
 		Operator = { fg = c.white },
 		Keyword = { fg = c.magenta },
+		Constant = { fg = c.blue },
 		Exception = { fg = c.red },
 		Boolean = { fg = c.cyan },
 		Number = { fg = c.cyan },
