@@ -19,23 +19,45 @@
   },
   "release": {
     "releaseTagPattern": "{projectName}@{version}",
-    "version": {
-      "conventionalCommits": true
-    },
-    "projects": [
-      "packages/palette",
-      "packages/templater",
-      "packages/ports/*"
-    ],
-    "projectsRelationship": "independent",
-    "changelog": {
-      "projectChangelogs": {
-        "file": false,
-        "createRelease": "github",
-        "renderOptions": {
-          "authors": false,
-          "commitReferences": true,
-          "versionTitleDate": true
+    "groups": {
+      "ports": {
+        "version": {
+          "conventionalCommits": true
+        },
+        "projects": [
+          "packages/ports/*"
+        ],
+        "projectsRelationship": "independent",
+        "changelog": {
+          "projectChangelogs": {
+            "file": true,
+            "createRelease": "github",
+            "renderOptions": {
+              "authors": false,
+              "commitReferences": true,
+              "versionTitleDate": true
+            }
+          }
+        }
+      },
+      "other": {
+        "version": {
+          "conventionalCommits": true
+        },
+        "projects": [
+          "packages/palette",
+          "packages/templater"
+        ],
+        "projectsRelationship": "independent",
+        "changelog": {
+          "projectChangelogs": {
+            "file": true,
+            "renderOptions": {
+              "authors": false,
+              "commitReferences": true,
+              "versionTitleDate": true
+            }
+          }
         }
       }
     },
